@@ -5,12 +5,13 @@ controllers.controller('lectorController', function($scope, $http, $cordovaBarco
 	socket.emit('i-am', 'CELL');
     $scope.leerCodigo = function() {
         $cordovaBarcodeScanner.scan().then(function(imagenEscaneada) {
-        	var cell_id = "my ID 4545646";
-            socket.emit('ionic-qr', {'web_id': imagenEscaneada.text, 'cell_id': cell_id});	
+					window.plugins.imeiplugin.getImei(function(imei){
+						socket.emit('ionic-qr', {'web_id': imagenEscaneada.text, 'cell_id': imei});
+					});
         }, function(error){
             alert('Ha ocurrido un error ' + error);
         });
-    }
+    };
     $scope.get_gps = function (){
     	var posOptions = {timeout: 10000, enableHighAccuracy: true};
     	$cordovaGeolocation.getCurrentPosition(posOptions).then(function (position) {
