@@ -20,7 +20,7 @@ angular.module('lectorQR', ['ionic', 'ngCordova', 'controllers'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
-    cordova.plugins.backgroundMode.setDefaults({ 
+    cordova.plugins.backgroundMode.setDefaults({
           title:  'Sending GPS',
           text:   'Enviando GPS del motorizado'
       });
@@ -29,4 +29,13 @@ angular.module('lectorQR', ['ionic', 'ngCordova', 'controllers'])
       cordova.plugins.backgroundMode.enable();
 
   });
+}).config(function($stateProvider, $urlRouterProvider) {
+  $stateProvider
+
+  .state('app', {
+    url: '/app',
+    abstract: true,
+    templateUrl: 'templates/index.html',
+    controller: 'AppCtrl'
+  })
 });

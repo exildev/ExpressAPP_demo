@@ -1,0 +1,28 @@
+.row{
+  margin-bottom: 0;
+}
+
+.keyboard div.col.s4, #pass-container{
+  text-align: center;
+  font-size: 1.6em;
+  color: #4CAF50;
+}
+
+#pass-container i{
+    position: absolute;
+    right: 30px;
+    margin-top: 12px;
+    color: #3f51b5;
+}
+
+#send-container{
+  padding-bottom: 10px;
+}
+
+input[type=password]{
+  border-bottom: 1px solid #4CAF50;
+}
+
+#send-container a{
+  color: #727272;
+}

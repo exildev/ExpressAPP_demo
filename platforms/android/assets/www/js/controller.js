@@ -24,4 +24,8 @@ controllers.controller('lectorController', function($scope, $http, $cordovaBarco
     };
 
     window.setInterval($scope.get_gps, 5000);
+})
+
+.controller('login-controller', function($scope, $http){
+	
 });

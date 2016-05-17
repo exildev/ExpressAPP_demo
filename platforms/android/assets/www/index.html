@@ -1,44 +1,150 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+<html lang="en">
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+<!--================================================================================
+	Item Name: Materialize - Material Design Admin Template
+	Version: 1.0
+	Author: GeeksLabs
+	Author URL: http://www.themeforest.net/user/geekslabs
+================================================================================ -->
 
-    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="msapplication-tap-highlight" content="no">
+  <meta name="description" content="Materialize is a Material Design Admin Template,It's modern, responsive and based on Material Design by Google. ">
+  <meta name="keywords" content="materialize, admin template, dashboard template, flat admin template, responsive admin template,">
+  <title>Lock Screen Page | Materialize - Material Design Admin Template</title>
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+  <!-- Favicons-->
+  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
+  <!-- Favicons-->
+  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
+  <!-- For iPhone -->
+  <meta name="msapplication-TileColor" content="#00bcd4">
+  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
+  <!-- For Windows Phone -->
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controller.js"></script>
-    <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
-  </head>
-  <body ng-app="lectorQR" class="platform-android platform-cordova platform-webview">
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content ng-controller="lectorController" style="text-align: center">
-        <div class="item">
-            <img src="img/ionic.png">
-            <h2> Lector QR </h2>
-            <p> Escanea un código de barras o lector QR </p>
+  <!-- CORE CSS-->
+
+  <link href="materialize/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="materialize/css/page-center.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+  <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
+  <link href="materialize/css/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+  <link href="materialize/css/style.css" type="text/css" rel="stylesheet" media="screen,projection">
+  <link href="css/login.css" type="text/css" rel="stylesheet" media="screen,projection">
+</head>
+
+<body class="green lighten-4 platform-android platform-cordova platform-webview">
+  <!-- Start Page Loading -->
+  <div id="loader-wrapper">
+      <div id="loader"></div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+  </div>
+  <!-- End Page Loading -->
+
+
+
+  <div id="login-page" class="row">
+    <div class="col s12 z-depth-4 card-panel">
+      <form class="login-form">
+        <div class="row">
+          <div class="input-field col s12 center">
+            <img src="images/avatar.jpg" alt="" class="circle responsive-img valign profile-image-login">
+            <h4 class="header">John Doe</h4>
+          </div>
         </div>
-        <div class="item">
-            <button class="button button-block button-positive" ng-click="leerCodigo()">Escanear</button>
+        <div class="row keyboard">
+            <div class="row" id="pass-container">
+              <div class="col s12">
+                <i class="mdi-content-backspace"></i>
+                <input type="password" name="name" value="" readonly>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <span class="waves-effect waves-circle">1</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">2</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">3</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <span class="waves-effect waves-circle">4</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">5</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">6</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <span class="waves-effect waves-circle">7</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">8</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">9</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <span>&nbsp;</span>
+              </div>
+              <div class="col s4">
+                <span class="waves-effect waves-circle">0</span>
+              </div>
+              <div class="col s4">
+                <span>&nbsp;</span>
+              </div>
+            </div>
+            <div id="send-container" class="row">
+              <div class="col s4">
+                <p class="margin ultra-small"><a href="#">Emparejar GPS-QR</a></p>
+              </div>
+              <div class="col s4">
+                <a class="btn-floating waves-effect waves-light indigo"><i class="mdi-content-send"></i></a>
+              </div>
+              <div class="col s4">
+                <span>&nbsp;</span>
+              </div>
+            </div>
         </div>
-      </ion-content>
-    </ion-pane>
-  </body>
+      </form>
+    </div>
+  </div>
+
+
+
+  <!-- ================================================
+    Scripts
+    ================================================ -->
+
+  <!-- jQuery Library -->
+  <script type="text/javascript" src="materialize/js/jquery-1.11.2.min.js"></script>
+  <!--materialize js-->
+  <script type="text/javascript" src="materialize/js/materialize.js"></script>
+  <!--prism-->
+  <script type="text/javascript" src="materialize/js/prism.js"></script>
+  <!--scrollbar-->
+  <script type="text/javascript" src="materialize/js/plugins/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+
+  <!--plugins.js - Some Specific JS codes for Plugin Settings-->
+  <script type="text/javascript" src="materialize/js/plugins.js"></script>
+
+</body>
+
 </html>
